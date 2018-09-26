@@ -1,0 +1,26 @@
+spring:
+  devtools:
+    livereload:
+      enabled: true
+  data:
+    web:
+      pageable:
+        max-page-size: 200
+  datasource:
+    hikari:
+      jdbc-url: jdbc:mysql://192.168.99.100/lego?characterEncoding=utf8
+      username: root
+      schema: lego
+      password: ""
+      # driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100/lego?characterEncoding=utf8
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    org.springframework.web: INFO
+mybatis:
+  config-location: "mybatis-config.xml"
+
+
