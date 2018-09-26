@@ -31,21 +31,32 @@ repositories {
 	maven {
 		url 'https://repo.spring.io/libs-release'
 	}
+	maven {
+		url 'https://repo.spring.io/libs-snapshot'
+	}
 }
 
 
 
 dependencies {
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.springframework.data:spring-data-jdbc:1.0.0.RELEASE')
+    compile('org.springframework.boot:spring-boot-starter-web')
 
-	// Use MySQL Connector-J
-	compile 'mysql:mysql-connector-java'
+    // Spring Data JDBC 1.0.0.RELEASE, 1.1.0.BUILD-SNAPSHOT, 1.0.1.BUILD-SNAPSHOT
+    compile("org.springframework.data:spring-data-jdbc:1.0.0.RELEASE")
 
-	compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVersion}")
-	runtime('org.springframework.boot:spring-boot-devtools')
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:${mybatisVersion}")
+    // Use MySQL Connector-J
+    compile 'mysql:mysql-connector-java'
+
+    // Spring Data Commons 2.1.1.BUILD-SNAPSHOT, 2.1.0.RELEASE, 2.0.10.RELEASE
+    compile("org.springframework.data:spring-data-commons:2.1.0.RELEASE")
+
+    // MyBatis
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVersion}")
+
+    runtime('org.springframework.boot:spring-boot-devtools')
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("org.mybatis.spring.boot:mybatis-spring-boot-starter-test:${mybatisVersion}")
 
 }
 

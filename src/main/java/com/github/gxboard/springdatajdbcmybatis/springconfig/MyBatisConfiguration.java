@@ -15,7 +15,11 @@
  */
 package com.github.gxboard.springdatajdbcmybatis.springconfig;
 
+import com.zaxxer.hikari.HikariDataSource;
 import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -27,6 +31,8 @@ import org.springframework.data.relational.core.conversion.RelationalConverter;
 import org.springframework.data.relational.core.mapping.RelationalMappingContext;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 
+import javax.sql.DataSource;
+
 /**
  * @author Jens Schauder
  * @author Mark Paluch
@@ -36,9 +42,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcOperations;
 @Import(JdbcConfiguration.class)
 public class MyBatisConfiguration {
 
-	@Bean
+    @Bean
     DataAccessStrategy defaultDataAccessStrategy(RelationalMappingContext context, RelationalConverter converter,
                                                  NamedParameterJdbcOperations operations, SqlSession sqlSession) {
-		return MyBatisDataAccessStrategy.createCombinedAccessStrategy(context, converter, operations, sqlSession);
-	}
+        return MyBatisDataAccessStrategy.createCombinedAccessStrategy(context, converter, operations, sqlSession);
+    }
+
 }

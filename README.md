@@ -42,3 +42,5 @@ https://www.jetbrains.com/help/idea/2018.2/run-debug-configuration-docker.html?u
 https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-testing.html
 
 
+### 80.2 Configure Two DataSources
+https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-two-datasources
