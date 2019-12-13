@@ -1,4 +1,4 @@
-# spring-data-jdbc-mysql-exsample
+# spring-data-jdbc-mysql-example
 Spring Data JDBC Mybatis Example Projects
 
 
